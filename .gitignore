@@ -1,4 +1,5 @@
 .idea/
+.htaccess
 core/config/
 core/cache/
 config.core.php
