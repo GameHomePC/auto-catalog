@@ -69,13 +69,24 @@ body {
 }
 
 /* layout */
+.header .header-middle {
+  height: 250px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
 /* module */
 .menu-header {
-  font-size: 0;
   background: #000000;
+}
+.menu-header ul {
+  font-size: 0;
 }
 .menu-header li {
   display: inline-block;
+}
+.menu-header li:hover a {
+  background: #ffffff;
+  color: #000000;
 }
 .menu-header a {
   display: block;
@@ -86,4 +97,8 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   padding: 0 10px;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }

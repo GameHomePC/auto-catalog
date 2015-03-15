@@ -1,9 +1,17 @@
 .menu-header {
-    font-size: 0;
     background: #000000;
+
+    ul { font-size: 0; }
 
     li {
         display: inline-block;
+
+        &:hover {
+            a {
+                background: #ffffff;
+                color: #000000;
+            }
+        }
     }
 
     a {
@@ -15,5 +23,6 @@
         text-decoration: none;
         text-transform: uppercase;
         padding: 0 10px;
+        @include transition(all 0.2s);
     }
 }
