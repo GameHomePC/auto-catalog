@@ -167,6 +167,9 @@ html, body {
   height: 100%;
   margin-bottom: -200px;
   padding-bottom: 200px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 * html .window {
