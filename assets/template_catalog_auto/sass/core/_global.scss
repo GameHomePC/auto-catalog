@@ -6,3 +6,53 @@ body {
     margin: 0 auto;
     max-width: 1200px;
 }
+
+/* sidebar */
+.main-content {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    @include box-sizing();
+
+    /* right */
+    &.sideRight-200 {
+        margin-right: -200px;
+        padding-right: 200px;
+    }
+
+    &.sideRight-300 {
+        margin-right: -300px;
+        padding-right: 300px;
+    }
+
+    &.sideRight-500 {
+        margin-right: -500px;
+        padding-right: 500px;
+    }
+
+    /* left */
+    &.sideLeft-200 {
+        margin-left: -200px;
+        padding-left: 200px;
+    }
+
+    &.sideLeft-300 {
+        margin-left: -300px;
+        padding-left: 300px;
+    }
+
+    &.sideLeft-500 {
+        margin-left: -500px;
+        padding-left: 500px;
+    }
+}
+
+.sidebar {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 10px;
+    @include box-sizing();
+
+    &.small-200 { width: 200px; }
+    &.small-300 { width: 300px; }
+}
