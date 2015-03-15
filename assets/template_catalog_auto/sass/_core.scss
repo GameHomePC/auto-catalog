@@ -7,3 +7,10 @@
 /* core */
 @import "core/form";
 @import "core/global";
+
+/* layout */
+@import "layout/header";
+@import "layout/footer";
+
+/* module */
+@import "module/menu";

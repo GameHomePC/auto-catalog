@@ -1,0 +1,19 @@
+.menu-header {
+    font-size: 0;
+    background: #000000;
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 0 10px;
+    }
+}
