@@ -1,2 +1,6 @@
 .idea/
 core/config/
+core/cache/
+config.core.php
+connectors/config.core.php
+manager/config.core.php
