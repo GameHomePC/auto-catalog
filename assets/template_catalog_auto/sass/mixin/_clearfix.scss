@@ -1,0 +1,112 @@
+/* sprite */
+@mixin mySprite($img){
+    @include icons-sprite($img);
+    width: icons-sprite-width($img);
+    height: icons-sprite-height($img);
+}
+
+/*clearfix*/
+@mixin clearfixmain {
+    &:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+}
+
+/*list_ib*/
+@mixin list_ib {
+    font-size: 0;
+    display: table;
+    li {display: inline-block; vertical-align: top;}
+}
+
+/*list_jst*/
+@mixin list_jst {
+    text-align: justify;
+    line-height: 0;
+    *text-justify: newspaper;
+    *text-align-last: justify;
+    *zoom:1;
+    :after {content: ''; display: inline-block; width: 100%; height: 0; visibility: hidden;}
+    li {display: inline-block; *display : inline; *zoom : 1; vertical-align: top; line-height: normal; text-align: left;}
+}
+
+/*reset*/
+@mixin reset {
+    padding: 0;
+    margin: 0;
+    border: none;
+
+    li {
+        list-style:none;
+    }
+}
+
+@mixin hold-center($blockWidth: auto, $blockMinWidth: 0, $blockMaxWidth: auto, $blockType: fixed) {
+    $blockMargin: auto;
+    @if ($blockType == fixed) {
+        @if ($blockWidth == auto) {
+            $blockMargin: 0;
+        }
+        width: $blockWidth;
+    } @else if ($blockType == flex) {
+        max-width: $blockMaxWidth;
+        min-width: $blockMinWidth;
+    } @else {
+        width: $blockWidth;
+    }
+    margin: $blockMargin;
+}
+
+@mixin core-justify() {
+    font-size: 0;
+    text: {
+        align: justify;
+        justify: newspaper;
+    }
+
+    &:after {
+        display: inline-block;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        width: 100%;
+        content: '';
+    }
+
+    .lt-ie8 & {
+        text-align-last: justify;
+        zoom: 1;
+    }
+}
+
+@mixin whiteSpace {
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: pre-line;
+    white-space: -moz-pre-wrap !important;
+    white-space: -hp-pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: -pre-wrap;
+    word-wrap: break-word;
+}
+
+/* footer-item */
+@mixin footer-item($height, $wrapper, $footer){
+    html, body { height: 100%; }
+
+    #{$wrapper} {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        margin-bottom: -$height;
+        padding-bottom: $height;
+    }
+
+    * html #{$wrapper} {
+        height: 100%;
+    }
+
+    #{$footer} {
+        position: relative;
+        height: $height;
+    }
+}
+

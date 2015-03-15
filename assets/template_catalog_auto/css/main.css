@@ -1,3 +1,11 @@
+/* compass style */
+/* mixin */
+/* sprite */
+/*clearfix*/
+/*list_ib*/
+/*list_jst*/
+/*reset*/
+/* footer-item */
 /* reset */
 @import "//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,cyrillic-ext,cyrillic";
 html, body, div, span, applet, object, iframe,
@@ -68,14 +76,22 @@ body {
   max-width: 1200px;
 }
 
+.content {
+  font-size: 0;
+}
+
 /* sidebar */
 .main-content {
   display: inline-block;
   vertical-align: top;
   width: 100%;
+  background: rgba(0, 0, 0, 0.5);
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  height: 200px;
   /* right */
   /* left */
 }
@@ -87,9 +103,17 @@ body {
   margin-right: -300px;
   padding-right: 300px;
 }
+.main-content.sideRight-400 {
+  margin-right: -400px;
+  padding-right: 400px;
+}
 .main-content.sideRight-500 {
   margin-right: -500px;
   padding-right: 500px;
+}
+.main-content.sideRight-600 {
+  margin-right: -600px;
+  padding-right: 600px;
 }
 .main-content.sideLeft-200 {
   margin-left: -200px;
@@ -99,18 +123,31 @@ body {
   margin-left: -300px;
   padding-left: 300px;
 }
+.main-content.sideLeft-400 {
+  margin-left: -400px;
+  padding-left: 400px;
+}
 .main-content.sideLeft-500 {
   margin-left: -500px;
   padding-left: 500px;
 }
+.main-content.sideLeft-600 {
+  margin-left: -600px;
+  padding-left: 600px;
+}
 
 .sidebar {
+  position: relative;
   display: inline-block;
   vertical-align: top;
   padding: 0 10px;
+  background: #ffffff;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  height: 200px;
 }
 .sidebar.small-200 {
   width: 200px;
@@ -119,10 +156,36 @@ body {
   width: 300px;
 }
 
+/* press footer */
+html, body {
+  height: 100%;
+}
+
+.window {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -200px;
+  padding-bottom: 200px;
+}
+
+* html .window {
+  height: 100%;
+}
+
+.footer {
+  position: relative;
+  height: 200px;
+}
+
 /* layout */
 .header .header-middle {
   height: 250px;
   background: rgba(0, 0, 0, 0.6);
+}
+
+.footer {
+  background: #000000;
 }
 
 /* module */
