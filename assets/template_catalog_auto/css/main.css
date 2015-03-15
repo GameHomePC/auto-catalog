@@ -67,6 +67,30 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* fonts */
 /* Open Sans */
 /* core */
+.input-text {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #000000;
+  outline: none;
+  height: 30px;
+}
+
+.input-button {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #000000;
+  outline: none;
+  height: 30px;
+}
+
+.select {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #000000;
+  outline: none;
+  height: 30px;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -218,4 +242,23 @@ html, body {
   -o-transition: all 0.2s;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+}
+
+.search {
+  font-size: 0;
+  padding: 10px;
+  background: tan;
+  text-align: center;
+}
+.search .input-text {
+  max-width: 700px;
+  width: 100%;
+}
+.search .input-text, .search .select, .search .input-button {
+  border: none;
+}
+
+.filter {
+  padding: 10px;
+  background: #ffffff;
 }
