@@ -1,23 +1,49 @@
+/* fieldset */
+.fieldset {
+    margin-top: 5px;
+
+    &:first-of-type { margin-top: 0; }
+    .input-text, .select { width: 100%; }
+
+    label {
+        display: inline-block;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+}
+
+/* input-text */
 .input-text {
     display: inline-block;
     vertical-align: top;
     border: 1px solid #000000;
     outline: none;
-    height: 30px;
+    height: 20px;
+    padding: 0 5px;
+    font-size: 12px;
+    @include box-sizing();
+
+    @include placeholder {
+        color: #000000;
+    }
 }
 
+/* input-button */
 .input-button {
     display: inline-block;
     vertical-align: top;
     border: 1px solid #000000;
     outline: none;
-    height: 30px;
+    height: 20px;
 }
 
+/* select */
 .select {
     display: inline-block;
     vertical-align: top;
     border: 1px solid #000000;
     outline: none;
-    height: 30px;
+    height: 20px;
+    font-size: 12px;
+    @include box-sizing();
 }
