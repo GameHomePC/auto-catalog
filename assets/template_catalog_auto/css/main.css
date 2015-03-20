@@ -9,6 +9,7 @@
 /* placeholder */
 /* reset */
 @import "//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,cyrillic-ext,cyrillic";
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -67,6 +68,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* fonts */
 /* Open Sans */
+/* FontAwesome */
 /* core */
 /* fieldset */
 .fieldset {
@@ -281,6 +283,54 @@ html, body {
   -o-transition: all 0.2s;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+}
+
+/* header top */
+.header-top {
+  height: 50px;
+  background: #000000;
+  font-size: 0;
+  text-align: justify;
+  text-justify: newspaper;
+}
+.header-top:after {
+  display: inline-block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 100%;
+  content: '';
+}
+.lt-ie8 .header-top {
+  text-align-last: justify;
+  zoom: 1;
+}
+
+.menu-top-header {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0;
+}
+.menu-top-header li {
+  display: inline-block;
+  vertical-align: top;
+}
+.menu-top-header a {
+  display: inline-block;
+  padding: 0 10px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.menu-top-header a:hover {
+  color: #000000;
+  background: #ffffff;
 }
 
 .search {

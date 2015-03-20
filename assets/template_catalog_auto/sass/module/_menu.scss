@@ -26,3 +26,37 @@
         @include transition(all 0.2s);
     }
 }
+
+/* header top */
+.header-top {
+    height: 50px;
+    background: #000000;
+    @include core-justify;
+}
+
+.menu-top-header {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+
+    li {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    a {
+        display: inline-block;
+        padding: 0 10px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 14px;
+        color: #ffffff;
+        text-decoration: none;
+        @include transition(all 0.2s);
+
+        &:hover {
+            color: #000000;
+            background: #ffffff;
+        }
+    }
+}
