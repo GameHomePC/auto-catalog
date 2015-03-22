@@ -31,7 +31,10 @@
 .header-top {
     height: 50px;
     background: #000000;
-    @include core-justify;
+
+    .wrapper {
+        @include core-justify;
+    }
 }
 
 .menu-top-header {
@@ -59,4 +62,28 @@
             background: #ffffff;
         }
     }
+}
+
+.login-header {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+
+    li {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    a {
+        display: inline-block;
+        padding: 0 10px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 14px;
+        color: #ffffff;
+        text-decoration: none;
+        @include transition(all 0.2s);
+    }
+
+    i { padding-right: 8px; }
 }
