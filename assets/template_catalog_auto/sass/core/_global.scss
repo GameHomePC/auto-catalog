@@ -92,3 +92,19 @@ body {
 
 /* press footer */
 @include footer-item(200px, '.window', '.footer');
+
+/* message */
+
+// reg
+.error-reg {
+    margin-top: 4px;
+
+    .error {
+        display: block;
+        font-size: 12px;
+        color: red;
+        margin-top: 2px;
+
+        &:first-child { margin-top: 0; }
+    }
+}
