@@ -70,8 +70,16 @@
     font-size: 0;
 
     li {
+        position: relative;
         display: inline-block;
         vertical-align: top;
+
+        &:hover {
+            .login-header-popup {
+                visibility: visible;
+                @include opacity(1);
+            }
+        }
     }
 
     a {
@@ -83,7 +91,20 @@
         color: #ffffff;
         text-decoration: none;
         @include transition(all 0.2s);
-    }
 
-    i { padding-right: 8px; }
+        i { padding-right: 8px; }
+    }
+}
+
+.login-header-popup {
+    position: absolute;
+    visibility: hidden;
+    top: 100%;
+    left: 0;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid #000000;
+    padding: 10px;
+    width: 175px;
+    @include transition(all 0.2s);
+    @include opacity(0);
 }

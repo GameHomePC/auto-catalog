@@ -146,6 +146,48 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   box-sizing: border-box;
 }
 
+/* checkbox */
+.checkbox {
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.checkbox input {
+  display: none;
+}
+.checkbox input:checked + i:before {
+  display: block;
+}
+.checkbox i {
+  display: inline-block;
+  vertical-align: top;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #000000;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.checkbox i:before {
+  display: none;
+  font-family: "FontAwesome", sans-serif;
+  font-size: 12px;
+  color: #000000;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  content: "\f00c";
+}
+.checkbox span {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 12px;
+  line-height: 14px;
+  margin-left: 4px;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -260,6 +302,7 @@ html, body {
 
 /* message */
 .error-reg {
+  display: block;
   margin-top: 4px;
 }
 .error-reg .error {
@@ -267,6 +310,7 @@ html, body {
   font-size: 12px;
   color: red;
   margin-top: 2px;
+  text-align: left;
 }
 .error-reg .error:first-child {
   margin-top: 0;
@@ -367,8 +411,14 @@ html, body {
   font-size: 0;
 }
 .login-header li {
+  position: relative;
   display: inline-block;
   vertical-align: top;
+}
+.login-header li:hover .login-header-popup {
+  visibility: visible;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
 }
 .login-header a {
   display: inline-block;
@@ -383,8 +433,25 @@ html, body {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
-.login-header i {
+.login-header a i {
   padding-right: 8px;
+}
+
+.login-header-popup {
+  position: absolute;
+  visibility: hidden;
+  top: 100%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #000000;
+  padding: 10px;
+  width: 175px;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
 }
 
 .search {
