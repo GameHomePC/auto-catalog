@@ -316,6 +316,58 @@ html, body {
   margin-top: 0;
 }
 
+.message {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  width: 300px;
+}
+.message .error, .message .success, .message .info {
+  position: relative;
+  font-size: 12px;
+  color: #ffffff;
+  padding: 15px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.message .error {
+  background: rgba(255, 0, 0, 0.9);
+}
+.message .success {
+  background: rgba(0, 153, 0, 0.9);
+}
+.message .info {
+  background: rgba(0, 0, 0, 0.9);
+}
+.message div {
+  margin-top: 10px;
+}
+.message div:first-child {
+  margin-top: 0;
+}
+.message .message-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+.message .message-close:before {
+  font-family: "FontAwesome", sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  content: "\f00d";
+}
+
+.dn {
+  display: none !important;
+}
+
 /* layout */
 .header .header-middle {
   height: 250px;
