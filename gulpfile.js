@@ -10,7 +10,7 @@ var gulp = require('gulp'), // подключаем галп
     livereload = require('gulp-livereload'), //
     connect = require('gulp-connect'), // создание мини сервера
     sourcemaps = require('gulp-sourcemaps'), // карта map
-    uglifyjs = require('gulp-uglifyjs');
+    uglifyjs = require('gulp-uglifyjs'); // сжатие js файлов
 
 // sass
 gulp.task('sass', function() {
