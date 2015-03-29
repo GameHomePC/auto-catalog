@@ -11,7 +11,7 @@ var gulp = require('gulp'), // подключаем галп
     connect = require('gulp-connect'), // создание мини сервера
     sourcemaps = require('gulp-sourcemaps'); // карта map
 
-// styles
+// sass
 gulp.task('sass', function() {
     return sass('sass/main.scss', { compass: true, style: 'expanded', sourcemap: true })
         .pipe(sourcemaps.init())
