@@ -1,8 +1,2 @@
 .idea/
-.htaccess
-core/config/
-core/cache/
-config.core.php
-connectors/config.core.php
-manager/config.core.php
-assets/template_catalog_auto/.sass-cache/
+node_modules/
