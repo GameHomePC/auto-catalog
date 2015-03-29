@@ -25,6 +25,7 @@ gulp.task('sass', function() {
         .pipe(notify({ message: 'Styles task complete styles' }));
 });
 
+// javascript
 gulp.task('javascript', function(){
     gulp.src('js/*.js')
         .pipe(uglifyjs())
