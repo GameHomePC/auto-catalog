@@ -17,7 +17,7 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('css'))
         .pipe(rename('main.min.css'))
         .pipe(minifyCSS())
-        .pipe(sourcemaps.write('', {
+        .pipe(sourcemaps.write('../css', {
             sourceRoot: '/sass'
         }))
         .pipe(gulp.dest('css'))
