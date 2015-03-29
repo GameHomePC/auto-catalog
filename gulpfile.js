@@ -14,12 +14,11 @@ var gulp = require('gulp'), // подключаем галп
 // styles
 gulp.task('sass', function() {
     return sass('sass/main.scss', { compass: true, style: 'expanded', sourcemap: true })
-        .pipe(sourcemaps.init())
         .pipe(gulp.dest('css'))
         .pipe(rename('main.min.css'))
         .pipe(minifyCSS())
-        .pipe(gulp.dest('css'))
         .pipe(sourcemaps.write())
+        .pipe(gulp.dest('css'))
         .pipe(notify({ message: 'Styles task complete styles' }));
 });
 
