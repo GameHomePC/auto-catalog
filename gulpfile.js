@@ -9,7 +9,8 @@ var gulp = require('gulp'), // подключаем галп
     prefixer = require('gulp-autoprefixer'), // Плагин префикс
     livereload = require('gulp-livereload'), //
     connect = require('gulp-connect'), // создание мини сервера
-    sourcemaps = require('gulp-sourcemaps'); // карта map
+    sourcemaps = require('gulp-sourcemaps'), // карта map
+    uglifyjs = require('gulp-uglifyjs');
 
 // sass
 gulp.task('sass', function() {
@@ -24,11 +25,19 @@ gulp.task('sass', function() {
         .pipe(notify({ message: 'Styles task complete styles' }));
 });
 
+gulp.task('javascript', function(){
+    gulp.src('js/*.js')
+        .pipe(uglifyjs())
+        .pipe(rename('index.min.js'))
+        .pipe(gulp.dest('js'));
+});
+
 // watch
 gulp.task('watch', function() {
-    gulp.watch('sass/**/*.scss', ['sass']); // следим за папкой css используя таск css
+    gulp.watch('sass/**/*.scss', ['sass']); // следим за папкой sass используя таск sass
+    gulp.watch('js/*.js', ['javascript']); // следим за папкой js используя таск javascript
 });
 
 // default
-gulp.task('default', ['sass', 'watch']);
+gulp.task('default', ['sass', 'watch', 'javascript']);
 
