@@ -1,0 +1,47 @@
+$i: 0;
+$px: 1px;
+$step: 20;
+$max: 600;
+
+%style-grid {
+    position: relative;
+    display: block;
+    float: left;
+    z-index: 10;
+
+    @include box-sizing(border-box);
+}
+
+.grid-max {
+    @extend %style-grid;
+
+    width: 100%;
+    z-index: 5;
+}
+
+.grid-inner {
+    min-height: 100px;
+    margin-right: 5px;
+}
+
+@while $i < $max {
+    $i: $i + $step;
+    $num: $i * $px;
+
+    .grid-#{$i}{
+        @extend %style-grid;
+
+        width: $num;
+    }
+
+    .grid-pm-left-#{$i}{
+        margin-left: -($num);
+        padding-left: $num;
+    }
+
+    .grid-pm-right-#{$i}{
+        margin-right: -($num);
+        padding-right: $num
+    }
+
+}
