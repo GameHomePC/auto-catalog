@@ -28,8 +28,7 @@ gulp.task('sass', function() {
 // javascript
 gulp.task('javascript', function(){
     gulp.src('js/*.js')
-        .pipe(uglifyjs())
-        .pipe(rename('index.min.js'))
+        .pipe(uglifyjs('index.min.js'))
         .pipe(gulp.dest('js'));
 });
 
