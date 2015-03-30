@@ -1,0 +1,1 @@
+function summa(n,u,m){return n+u+m}

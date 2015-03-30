@@ -49,11 +49,7 @@ gulp.task('html:build', function(){
 
 gulp.task('sass:build', function(){
 
-    return sass(path.src.css, { sourcemap: true, compass: true })
-        .pipe(sourcemaps.write('maps', {
-            sourceRoot: path.src.css,
-            includeContent: false
-        }))
+    return sass(path.src.css, { sourcemap: false, compass: true })
         .pipe(minifyCSS())
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}))
