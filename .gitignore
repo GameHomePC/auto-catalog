@@ -1,6 +1,6 @@
 .idea/
 .idea*
-node_modules/
-node_modules*
 .sass-cache/
 .sass-cache*
+node_modules/
+node_modules*
