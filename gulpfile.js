@@ -1,43 +1,105 @@
-"use strict";
+var gulp = require('gulp'),
+    watch = require('gulp-watch'),
+    uglify = require('gulp-uglify'),
+    sass = require('gulp-ruby-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
+    minifyCSS = require('gulp-minify-css'),
+    rimraf = require('rimraf'),
+    browserSync = require("browser-sync"),
+    reload = browserSync.reload;
 
-var gulp = require('gulp'), // подключаем галп
-    concatCSS = require('gulp-concat-css'), // объединяет css файлы
-    sass = require('gulp-ruby-sass'), // предпроцессор sass
-    minifyCSS = require('gulp-minify-css'), // минифицируем css файлы
-    rename = require('gulp-rename'), // переименовывает файлы
-    notify = require('gulp-notify'), // показывает приятные подсказки
-    prefixer = require('gulp-autoprefixer'), // Плагин префикс
-    livereload = require('gulp-livereload'), //
-    connect = require('gulp-connect'), // создание мини сервера
-    sourcemaps = require('gulp-sourcemaps'), // карта map
-    uglifyjs = require('gulp-uglifyjs'); // сжатие js файлов
+var path = {
+    build: {
+        html: 'build/',
+        css: 'build/css/',
+        img: 'build/img/',
+        js: 'build/js/'
+    },
+    src: {
+        html: 'src/**/*.html',
+        css: 'src/sass/main.scss',
+        img: 'src/img/**/*.*',
+        js: 'src/js/main.js'
+    },
+    watch: {
+        html: 'src/**/*.html',
+        css: 'src/sass/**/*.scss',
+        img: 'src/img/**/*.*',
+        js: 'src/js/main.js'
+    },
+    clean: './build'
+};
 
-// sass
-gulp.task('sass', function() {
-    return sass('sass/main.scss', { compass: true, style: 'expanded', sourcemap: true })
-        .pipe(gulp.dest('css'))
-        .pipe(rename('main.min.css'))
-        .pipe(minifyCSS())
-        .pipe(sourcemaps.write('../css', {
-            sourceRoot: '/sass'
+var serverConfig = {
+    server: {
+        baseDir: "./build"
+    },
+    tunnel: true,
+    host: 'localhost',
+    port: 9000
+};
+
+gulp.task('html:build', function(){
+
+    gulp.src(path.src.html)
+        .pipe(gulp.dest(path.build.html))
+        .pipe(reload({stream: true}));
+
+});
+
+gulp.task('sass:build', function(){
+
+    return sass(path.src.css, { sourcemap: true, compass: true })
+        .pipe(sourcemaps.write('maps', {
+            sourceRoot: path.src.css,
+            includeContent: false
         }))
-        .pipe(gulp.dest('css'))
-        .pipe(notify({ message: 'Styles task complete styles' }));
+        .pipe(minifyCSS())
+        .pipe(gulp.dest(path.build.css))
+        .pipe(reload({stream: true}))
+        .on('error', function(error){
+            console.error(error.message);
+        });
+
 });
 
-// javascript
-gulp.task('javascript', function(){
-    gulp.src('js/*.js')
-        .pipe(uglifyjs('index.min.js'))
-        .pipe(gulp.dest('js'));
+gulp.task('javascript:build', function(){
+
+    return gulp.src(path.src.js)
+        .pipe(uglify())
+        .pipe(gulp.dest(path.build.js))
+        .pipe(reload({stream: true}));
+
 });
 
-// watch
-gulp.task('watch', function() {
-    gulp.watch('sass/**/*.scss', ['sass']); // следим за папкой sass используя таск sass
-    gulp.watch('js/*.js', ['javascript']); // следим за папкой js используя таск javascript
+gulp.task('clean', function(cb){
+    rimraf(path.clean, cb);
 });
 
-// default
-gulp.task('default', ['sass', 'watch', 'javascript']);
+gulp.task('build', [
+    'html:build',
+    'sass:build',
+    'javascript:build'
+]);
 
+gulp.task('watch', function(){
+
+    watch(path.watch.html, function(ev, cb){
+        gulp.start('html:build');
+    });
+
+    watch(path.watch.css, function(ev, cb){
+        gulp.start('sass:build');
+    });
+
+    watch(path.watch.js, function(ev, cb){
+        gulp.start('javascript:build');
+    });
+
+});
+
+gulp.task('webserver', function(){
+    browserSync(serverConfig);
+});
+
+gulp.task('default', ['build', 'webserver', 'watch']);
