@@ -1,0 +1,33 @@
+/* side bar */
+.side-bar {
+    position: relative;
+    float: left;
+    background: #ffffff;
+    height: 400px;
+
+    &.side-w200 { width: 200px; }
+    &.side-w300 { width: 300px; }
+}
+
+.side-content {
+    float: left;
+    width: 100%;
+    @include box-sizing();
+
+    background: blue;
+    height: 400px;
+
+    &.indentL-side-bar {
+        margin-left: -200px;
+        padding-left: 200px;
+    }
+
+    &.indentR-side-bar {
+        margin-right: -300px;
+        padding-right: 300px;
+    }
+}
+
+.container {
+
+}

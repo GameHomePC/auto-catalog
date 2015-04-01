@@ -1,0 +1,54 @@
+.fieldset {
+    margin-top: 5px;
+
+    &:first-child {
+        margin-top: 5px;
+    }
+}
+
+/* select */
+.select {
+    display: block;
+    height: 20px;
+    width: 100%;
+    border: 1px solid #000000;
+}
+
+
+/* checkbox */
+.checkbox {
+    input { display: none; }
+
+    input:checked + i {
+        &:before {
+            content: "";
+        }
+    }
+
+    i {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 15px;
+        height: 15px;
+        border: 1px solid #000000;
+
+        &:before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 5px;
+            height: 5px;
+            background: #000000;
+        }
+    }
+
+    span {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 14px;
+    }
+}
