@@ -1,5 +1,14 @@
 @import "compass/reset";
 
+<<<<<<< HEAD
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
+
+@import "core/grid";
+@import "core/global";
+
+@import "module/widget_wrap";
+@import "module/widget_filter";
+=======
 /* fonts */
 @import "fonts/fonts";
 
@@ -11,3 +20,4 @@
 @import "module/header";
 @import "module/container";
 @import "module/filter";
+>>>>>>> 81e38c026fe40bb95df07a7bbe4ca7c1d5d1b619
