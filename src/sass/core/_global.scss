@@ -1,20 +1,8 @@
+html, body {
+    min-height: 100%;
+    height: 100%;
+}
+
 body {
-    font-family: Verdana, sans-serif;
-    min-width: 1200px;
+    background: yellow;
 }
-
-.clear {
-    @include legacy-pie-clearfix();
-}
-
-.npr { padding-right: 0; }
-.npl { padding-left: 0; }
-.npt { padding-top: 0; }
-.npb { padding-bottom: 0; }
-
-.nmr { margin-right: 0; }
-.nml { margin-left: 0; }
-.nmt { margin-top: 0; }
-.nmb { margin-bottom: 0; }
-
-@include window-and-footer('.window', '.footer', 150px);

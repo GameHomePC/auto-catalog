@@ -1,0 +1,21 @@
+/* filter */
+
+.filter {
+    .filter-title {
+        @include background(linear-gradient(top, #fff580, #ffea03));
+
+        h2 {
+            padding: 0 15px;
+            height: 30px;
+            line-height: 29px;
+            @include box-sizing();
+        }
+    }
+
+    .filter-content {
+        padding: 10px 15px;
+        background: #ffffff;
+    }
+
+
+}
