@@ -19,7 +19,7 @@ var path = {
         html: 'src/**/*.html',
         css: 'src/sass/main.scss',
         img: 'src/img/**/*.*',
-        js: 'src/js/main.js'
+        js: 'src/js/**/*.js'
     },
     watch: {
         html: 'src/**/*.html',
