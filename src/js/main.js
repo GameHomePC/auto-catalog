@@ -29,7 +29,6 @@
 
                     } else {
 
-                        var
                         var reg = new RegExp();
 
                     }
