@@ -1,0 +1,1 @@
+!function(){function t(){}t.prototype={select:function(t){function n(){}return n.prototype={init:function(t){return this.select=t,this}},(new n).init(t)}};var n=new t;console.log(n.select(document.body))}();
