@@ -5,6 +5,7 @@
 .header-top {
     height: 60px;
     @include background(linear-gradient(bottom, #ffc837, #ffd766));
+    @include box-shadow(0 0 5px -1px #000);
 
     .wrapper {
         @include core-justify;
@@ -168,8 +169,9 @@
         left: 0;
         right: 0;
         background: #ffffff;
-        @include border-radius(5px);
+        @include border-radius(0 0 5px 5px);
         @include box-shadow(0 0 5px 0px rgba(0,0,0,0.5));
+        z-index: 10;
 
         li {
             display: block;
