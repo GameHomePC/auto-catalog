@@ -3,6 +3,8 @@
 <head>
     <title>Главная страница</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/libs/jquery/jquery-1.11.2.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
 <div class="window">
@@ -13,10 +15,33 @@
                     <span><i>auto</i> catalog</span>
                 </div>
                 <div class="header-menu">
-                    <ul>
+                    <ul class="header-nav">
                         <li><a href="#">Главная</a></li>
                         <li><a href="#">Каталог</a></li>
                         <li><a href="#">Новости</a></li>
+                    </ul>
+
+                    <ul class="header-reg">
+                        <li class="level-1">
+                            <a class="header-user level-1" href="#">
+                                <i class="header-arrow fa fa-chevron-up"></i>
+                                <i class="header-main-icon fa fa-user"></i>
+                                <span class="header-name">Евгений Алексеенко</span>
+                            </a>
+
+                            <ul class="sub-menu">
+                                <li><a href="#">Профиль</a></li>
+                                <li><a href="#">Объявления (0)</a></li>
+                                <li><a href="#">Сообщения (0)</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="level-1">
+                            <a class="level-1" href="#">
+                                <i class="header-main-icon fa fa-sign-in"></i>
+                                <span class="header-name">Выход</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -24,7 +49,9 @@
     </header>
 
     <div class="content">
+        <section class="">
 
+        </section>
     </div>
 </div>
 
