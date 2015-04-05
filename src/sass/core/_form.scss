@@ -1,8 +1,22 @@
 .fieldset {
     .fieldset-title {
+        display: block;
         font-size: 14px;
         font-weight: 600;
-        color: #ffffff;
+        color: #000000;
+        margin-bottom: 5px;
+    }
+
+    .fieldset-list {
+
+        li {
+            display: block;
+            margin-top: 5px;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
     }
 
     margin-top: 5px;
@@ -26,8 +40,11 @@
     input { display: none; }
 
     input:checked + i {
+        background: #7fbdee;
+        border: 1px solid #8099af;
+
         &:before {
-            content: "";
+            content: "\f00c";
         }
     }
 
@@ -37,7 +54,11 @@
         vertical-align: top;
         width: 15px;
         height: 15px;
-        border: 1px solid #000000;
+        border: 1px solid #cccccc;
+        background: #ececec;
+        @include border-radius(2px);
+        @include transition(all 0.2s);
+        @include box-sizing();
 
         &:before {
             position: absolute;
@@ -46,9 +67,10 @@
             top: 0;
             bottom: 0;
             margin: auto;
-            width: 5px;
-            height: 5px;
-            background: #000000;
+            font-family: $FontAwesome;
+            color: #000000;
+            font-size: 12px;
+            text-align: center;
         }
     }
 
@@ -56,5 +78,6 @@
         display: inline-block;
         vertical-align: top;
         font-size: 14px;
+        margin-left: 5px;
     }
 }
