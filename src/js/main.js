@@ -1,51 +1,33 @@
-(function(){
+(function($) {
+    var MYAPP = MYAPP || {};
 
-    function App (){}
+    MYAPP.toggleHeader = function(selecter) {
+        var selected = $(selecter);
 
-    App.prototype = {
+        selected.on('click', function(e) {
+            var self = $(this),
+                selfSubMenu = self.next('.sub-menu');
 
-        select: function(selector){
+            if(selfSubMenu.length) {
+                if(!self.hasClass('active')) {
+                    selected.removeClass('active');
+                    self.addClass('active');
+                    selfSubMenu.slideDown(200);
 
-            function MyJquery(){}
-
-            MyJquery.prototype = {
-                nativeClassList: (document.createElement('div').classList) ? true : false,
-
-                init: function(selector){
-                    this.select = selector;
-                    return this;
-                },
-
-                addClass: function(){
-
-
-
-                },
-                toggleClass: function(){},
-                removeClass: function(){},
-                hasClass: function(clazz){
-
-                    if (this.nativeClassList){
-
-                    } else {
-
-                        var reg = new RegExp();
-
-                    }
+                } else {
+                    self.removeClass('active');
+                    selfSubMenu.stop().slideUp(200);
 
                 }
+            }
 
-            };
-
-            return new MyJquery().init(selector);
-
-        }
-
+            return false;
+        });
     };
 
-    var app = new App();
+    $(function() {
+        /* toggle header */
+        MYAPP.toggleHeader('.header-reg .level-1');
+    });
 
-    console.log(app.select(document.body));
-
-
-})();
+}(jQuery));

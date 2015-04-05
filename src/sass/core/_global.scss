@@ -1,8 +1,8 @@
-html, body {
-    min-height: 100%;
-    height: 100%;
+body {
+    font-family: $OpenSans;
 }
 
-body {
-    background: yellow;
+.wrapper {
+    margin: 0 auto;
+    width: 1170px;
 }
