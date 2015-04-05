@@ -89,14 +89,26 @@
 
         prototype = proto_common._extend(proto_common, prototype);
 
-        function MyObject(){}
+        function MyObject(method){
+
+            method = method || {};
+
+            var obj = this._extend(this, method);
+            for (var prop in obj){
+                if (this._hasProp(obj, prop)){
+                    this[prop] = obj[prop];
+                }
+            }
+
+        }
+
         MyObject.prototype = prototype;
 
         return new MyObject(method);
 
     }
 
-    var av = createObject({}, {
+    var av = createObject({
 
         message: createObject({}, {
 
@@ -104,10 +116,18 @@
 
                 message = message || '';
 
-                var msgObject = createObject();
+                var msgObject = createObject({},{
+                    show: function(hide, fade){
+
+                        hide = hide || this._getOption('hide');
+                        fade = fade || this._getOption('fade');
+
+                    }
+                }, true);
 
                 msgObject._setOptions({
                     message: message,
+                    target: document.body,
                     hide: 8000,
                     fade: 500
                 });
@@ -121,10 +141,6 @@
     });
 
     var msg = av.message.create();
-
-    console.log(msg);
-
-
 
 
     /* ----------------------- */
