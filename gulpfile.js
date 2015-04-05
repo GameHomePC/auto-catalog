@@ -35,7 +35,7 @@ var serverConfig = {
     server: {
         baseDir: "./build"
     },
-    tunnel: true,
+    tunnel: false,
     host: 'localhost',
     port: 9000
 };
@@ -43,7 +43,7 @@ var serverConfig = {
 /* html */
 gulp.task('html:build', function(){
 
-    gulp.src(path.src.html)
+    return gulp.src(path.src.html)
         .pipe(gulp.dest(path.build.html))
         .pipe(reload({stream: true}));
 

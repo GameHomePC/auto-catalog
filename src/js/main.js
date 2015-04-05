@@ -1,7 +1,9 @@
 (function($) {
     var MYAPP = MYAPP || {};
 
-    MYAPP.toggleHeader = function(selecter) {
+    MYAPP.Header = function() {};
+
+    MYAPP.Header.toggleHeader = function(selecter) {
         var selected = $(selecter);
 
         selected.on('click', function(e) {
@@ -27,7 +29,7 @@
 
     $(function() {
         /* toggle header */
-        MYAPP.toggleHeader('.header-reg .level-1');
+        MYAPP.Header.toggleHeader('.header-reg .level-1');
     });
 
 }(jQuery));
