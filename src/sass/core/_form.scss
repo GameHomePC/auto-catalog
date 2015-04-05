@@ -1,4 +1,6 @@
 .fieldset {
+    margin-top: 10px;
+
     .fieldset-title {
         display: block;
         font-size: 14px;
@@ -19,11 +21,7 @@
         }
     }
 
-    margin-top: 5px;
-
-    &:first-child {
-        margin-top: 5px;
-    }
+    &:first-child { margin-top: 0; }
 }
 
 /* select */
@@ -75,6 +73,57 @@
             color: #000000;
             font-size: 12px;
             text-align: center;
+        }
+    }
+
+    span {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+}
+
+/* checkbox */
+.radio {
+    input { display: none; }
+
+    input:checked + i {
+        background: #7fbdee;
+        border: 1px solid #8099af;
+
+        &:before {
+            content: "";
+        }
+    }
+
+    input:disabled + i {
+        @include opacity(0.5);
+    }
+
+    i {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 15px;
+        height: 15px;
+        border: 1px solid #cccccc;
+        background: #ececec;
+        @include border-radius(50%);
+        @include transition(all 0.2s);
+        @include box-sizing();
+
+        &:before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            height: 5px;
+            margin: auto;
+            background: #000000;
+            @include border-radius(50%);
         }
     }
 
