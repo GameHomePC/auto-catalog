@@ -16,7 +16,7 @@
                         for (var prop in item){
                             if (this._hasProp(item, prop)){
                                 if (prop in obj) this._log('_extend() - данный метод или свойство существует ' + prop);
-                                obj[prop] = item[prop];
+                                this[prop] = obj[prop] = item[prop];
                             }
                         }
                     }
@@ -93,12 +93,7 @@
 
             method = method || {};
 
-            var obj = this._extend(this, method);
-            for (var prop in obj){
-                if (this._hasProp(obj, prop)){
-                    this[prop] = obj[prop];
-                }
-            }
+            this._extend(this, method);
 
         }
 
@@ -139,8 +134,6 @@
         })
 
     });
-
-    var msg = av.message.create();
 
 
     /* ----------------------- */
