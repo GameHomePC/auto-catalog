@@ -35,6 +35,9 @@
 
 /* checkbox */
 .checkbox {
+    display: inline-block;
+    cursor: pointer;
+
     input { display: none; }
 
     input:checked + i {
@@ -86,6 +89,9 @@
 
 /* checkbox */
 .radio {
+    display: inline-block;
+    cursor: pointer;
+
     input { display: none; }
 
     input:checked + i {
