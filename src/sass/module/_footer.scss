@@ -1,0 +1,5 @@
+.footer {
+    background: #000000;
+}
+
+@include sticky-footer(150px, '.window', '.footer-root', '.footer');
