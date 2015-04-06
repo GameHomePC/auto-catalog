@@ -169,6 +169,48 @@
     $(function() {
         /* toggle header */
         MYAPP.Header.toggleHeader('.header-reg .level-1');
+
+        function absoluteFixed(debug, scrollTop, asideOffset, footerOffset, asideHeight, aside){
+
+            var asideTop = asideOffset.top;
+            var asideBottom = asideTop + asideHeight;
+            var footerTop = footerOffset.top;
+
+            if (scrollTop >= asideTop){
+                aside.addClass('abs');
+
+                var asideBottomFixed = asideBottom + (scrollTop - asideTop);
+
+                if (asideBottomFixed <= footerTop){
+
+                    aside.css({
+                        top: scrollTop
+                    });
+
+                }
+
+            } else {
+                aside.removeClass('abs');
+                aside.css({
+                    top: 0
+                });
+            }
+
+        }
+
+        var aside = $('.side-bar');
+        var asideOffset = aside.offset();
+        var asideHeight = aside.height();
+        var footer = $('.footer');
+        var footerOffset = footer.offset();
+
+        $(window).on('scroll', function(e){
+
+            var scrollTop = $(this).scrollTop();
+
+            absoluteFixed(debug, scrollTop, asideOffset, footerOffset, asideHeight, aside);
+
+        });
     });
 
 }(jQuery));
